@@ -1,35 +1,35 @@
 <template>
 	<view class="nav">
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image  class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 		<view class="item">
-			<image src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
+			<image class="icon" src="https://bpic.588ku.com/element_origin_min_pic/19/06/25/bc370128f472a89eaafbdb54d87d49ed.jpg" mode="widthFix"></image>
 			<text class="name">跑步鞋</text>
 		</view>
 	</view>
@@ -58,7 +58,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		image {
+		.icon {
 			width: 128rpx;
 			height: 128rpx;
 		}

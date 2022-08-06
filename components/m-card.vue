@@ -1,10 +1,7 @@
 <template>
 	<view class="cardContainer">
-		<view class="card-header">
-			<text class="h-left">―</text>
-			<text class="card-title">{{title}}</text>
-			<text class="h-right">―</text>
-		</view>
+		
+		<m-card-title :title="title"></m-card-title>
 
 		<view class="goodsList">
 			<u-row :gutter="gutter">
@@ -27,24 +24,26 @@
 
 <script>
 	import mGoodsItem from '@/components/m-goods-item.vue';
-	
+	import mCardTitle from '@/components/m-card-title.vue';
+
 	export default {
 		name: "m-card",
-		components:{
-			mGoodsItem
+		components: {
+			mGoodsItem,
+			mCardTitle
 		},
 		props: {
 			title: {
-				default: "默认标题",
+				default: "主标题",
 				type: String
 			},
-			gutter:{
+			gutter: {
 				default: "16",
 				type: String
 			},
-			// single为单列模式,double为双列
-			colTyle:{
-				default: "double",
+			// oneCol为单列模式,twoCol为双列，threeCol为三列
+			colTyle: {
+				default: "twoCol",
 				type: String
 			}
 		},
@@ -53,26 +52,28 @@
 
 			};
 		},
-		methods:{
-			
+		methods: {
+
 		},
-		computed:{
-			spanComp(){
-				return this.colTyle === "single" ? "12" : "6";
+		computed: {
+			spanComp() {
+				switch (this.colTyle) {
+					case "oneCol":
+						return "12";
+						break;
+					case "twoCol":
+						return "6";
+						break;
+					case "threeCol":
+						return "4";
+						break;
+				}
+
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.card-header {
-		padding: 20rpx 0;
-		text-align: center;
-		font-weight: 700;
-
-		.card-title {
-			margin: 0 15rpx;
-			font-size: 32rpx;
-		}
-	}
+	
 </style>

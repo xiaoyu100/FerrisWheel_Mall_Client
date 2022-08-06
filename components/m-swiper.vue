@@ -2,13 +2,13 @@
 	<view class="swiperContent">
 		<swiper class="swiper" circular indicator-dots autoplay>
 			<swiper-item>
-				<view class="swiper-item uni-bg-red">A</view>
+				<image src="https://www.ficgra.cn/design/wp-content/uploads/2019/03/fuzhuangbanner.png" mode="widthFix"></image>
 			</swiper-item>
 			<swiper-item>
-				<view class="swiper-item uni-bg-green">B</view>
+				<image src="https://img.zcool.cn/community/01018e5bb03efaa801213dea907342.jpg@1280w_1l_2o_100sh.jpg" mode="widthFix"></image>
 			</swiper-item>
 			<swiper-item>
-				<view class="swiper-item uni-bg-blue">C</view>
+				<image src="https://img.zcool.cn/community/017d105ac6de7ba8012062e39683a8.jpg@1280w_1l_2o_100sh.jpg" mode="widthFix"></image>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -17,6 +17,12 @@
 <script>
 	export default {
 		name: "m-swiper",
+		props:{
+			list:{
+				default:[],
+				type:Array
+			}
+		},
 		data() {
 			return {
 
@@ -26,10 +32,10 @@
 </script>
 
 <style lang="scss" scoped>
-	.swiper-item {
-		display: block;
-		height: 300rpx;
-		line-height: 300rpx;
-		text-align: center;
+	.swiper {
+		image {
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>
