@@ -8,7 +8,7 @@
 		}, {
 			"path": "pages/category/category",
 			"style": {
-				"navigationBarTitleText": "分类",
+				"navigationBarTitleText": "商品分类",
 				"enablePullDownRefresh": false
 			}
 
@@ -38,6 +38,24 @@
         }
         ,{
             "path" : "pages/message/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/goodsList/goodsList",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

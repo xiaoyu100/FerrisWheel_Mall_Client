@@ -4,10 +4,10 @@
 			<view class="cu-bar search">
 				<view class="search-form radius">
 					<text class="cuIcon-search"></text>
-					<input disabled type="text" placeholder="点击搜索123" @click="goSearch"></input>
+					<input disabled type="text" placeholder="点击搜索" @click="goSearch"></input>
 				</view>
 				<view class="action">
-					<u-badge bgColor="#B22222" count="999" :offset="[13,25]"></u-badge>
+					<u-badge bgColor="#B22222" :count="countMessage" :offset="[13,25]"></u-badge>
 					<text class="cuIcon-message message" @click="goMessage"></text>
 				</view>
 			</view>
@@ -20,7 +20,7 @@
 		<swiper class="swiper_container" :current="swiperCurrent" @transition="transition"
 			@animationfinish="animationfinish">
 			<swiper-item>
-				<scroll-view scroll-y style="height: 100%;width: 100%;">
+				<scroll-view scroll-y style="height: 100%;width: 100%;" refresher-enabled @refresherrefresh="handleRefresh">
 
 					<m-swiper></m-swiper>
 
@@ -74,13 +74,15 @@
 				}, {
 					name: '休闲零食'
 				}, {
-					name: '当季爆品'
+					name: '日常百货'
 				}, {
 					name: '地方特色'
 				}],
 				// 因为内部的滑动机制限制，请将tabs组件和swiper组件的current用不同变量赋值
 				tabCurrent: 0, // tabs组件的current值，表示当前活动的tab选项
 				swiperCurrent: 0, // swiper组件的current值，表示当前那个swiper-item是活动的
+				countMessage:999, //信息数量
+				swiperList:[],
 			}
 		},
 		onLoad() {
@@ -113,6 +115,9 @@
 				this.$refs.uTabs.setFinishCurrent(current);
 				this.swiperCurrent = current;
 				this.tabCurrent = current;
+			},
+			handleRefresh(){
+				console.log("下拉刷新了");
 			}
 		}
 	}
