@@ -3,7 +3,7 @@
 		<view class="cu-bar search bg-white">
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
-				<input :adjust-position="false" type="text" placeholder="请输入搜索关键字" confirm-type="search"
+				<input focus :adjust-position="false" type="text" placeholder="请输入搜索关键字" confirm-type="search"
 					v-model="keyword" @input="changeInput"></input>
 			</view>
 			<view class="action">

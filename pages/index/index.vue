@@ -1,5 +1,7 @@
 <template>
 	<view class="indexContent">
+		<u-modal v-model="isShow" content="敬请期待..."></u-modal>
+		
 		<view class="searchAndMessage">
 			<view class="cu-bar search">
 				<view class="search-form radius">
@@ -7,7 +9,7 @@
 					<input disabled type="text" placeholder="点击搜索" @click="goSearch"></input>
 				</view>
 				<view class="action">
-					<u-badge bgColor="#B22222" :count="countMessage" :offset="[13,25]"></u-badge>
+					<u-badge :is-dot="true" :offset="[25,30]"></u-badge>
 					<text class="cuIcon-message message" @click="goMessage"></text>
 				</view>
 			</view>
@@ -20,7 +22,8 @@
 		<swiper class="swiper_container" :current="swiperCurrent" @transition="transition"
 			@animationfinish="animationfinish">
 			<swiper-item>
-				<scroll-view scroll-y style="height: 100%;width: 100%;" refresher-enabled @refresherrefresh="handleRefresh">
+				<scroll-view scroll-y style="height: 100%;width: 100%;" refresher-enabled
+					@refresherrefresh="handleRefresh">
 
 					<m-swiper></m-swiper>
 
@@ -81,8 +84,9 @@
 				// 因为内部的滑动机制限制，请将tabs组件和swiper组件的current用不同变量赋值
 				tabCurrent: 0, // tabs组件的current值，表示当前活动的tab选项
 				swiperCurrent: 0, // swiper组件的current值，表示当前那个swiper-item是活动的
-				countMessage:999, //信息数量
-				swiperList:[],
+				countMessage: 999, //信息数量
+				swiperList: [],
+				isShow:false
 			}
 		},
 		onLoad() {
@@ -95,9 +99,8 @@
 				})
 			},
 			goMessage() {
-				uni.navigateTo({
-					url: '/pages/message/message'
-				})
+				this.isShow = true;
+				console.log(this.isShow);
 			},
 			// tabs通知swiper切换
 			tabsChange(index) {
@@ -116,7 +119,7 @@
 				this.swiperCurrent = current;
 				this.tabCurrent = current;
 			},
-			handleRefresh(){
+			handleRefresh() {
 				console.log("下拉刷新了");
 			}
 		}

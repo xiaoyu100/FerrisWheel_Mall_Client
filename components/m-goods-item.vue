@@ -1,5 +1,5 @@
 <template>
-	<view class="goodsItem">
+	<view class="goodsItem" @click="goDetail">
 		<image src="https://img.zcool.cn/community/00ec5d5abb196ea8012062e3c1a231.jpg@520w_390h_1c_1e_2o_100sh.jpg"
 			mode="widthFix"></image>
 
@@ -21,6 +21,13 @@
 			return {
 
 			};
+		},
+		methods:{
+			goDetail(){
+				uni.navigateTo({
+					url:'/pages/detail/detail'
+				})
+			}
 		}
 	}
 </script>
