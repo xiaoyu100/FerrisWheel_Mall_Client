@@ -18,6 +18,7 @@
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
 	@import "uview-ui/index.scss";
+	@import "static/iconfont/iconfont.css";
 	
 	/* 全局样式 */
 	@import "static/styles/global.css";

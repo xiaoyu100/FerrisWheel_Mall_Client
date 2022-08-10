@@ -17,7 +17,7 @@
 					<view class="title">{{item2.name}}</view>
 				
 					<view class="childItemWrap">
-						<view class="childItem" v-for="item3 in item2.children" :key="item3.id">
+						<view class="childItem" v-for="item3 in item2.children" :key="item3.id" @click="goGoodsList">
 							<image class="itemIcon" :src="item3.iconPath" mode="widthFix"></image>
 							<view class="itemName">{{item3.name}}</view>
 						</view>
@@ -233,6 +233,11 @@
 			handleClick(index) {
 				this.activeIndex = index;
 				//获取该一级分类下的二级和三级分类
+			},
+			goGoodsList(){
+				uni.navigateTo({
+					url:"/pages/goodsList/goodsList"
+				})
 			}
 		}
 	}
