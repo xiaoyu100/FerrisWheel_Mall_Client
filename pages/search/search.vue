@@ -10,11 +10,22 @@
 				<button class="cu-btn shadow-blur round searchBtn" @click="handleSearch">搜索</button>
 			</view>
 		</view>
+		
+		<view class="hotSearch">
+			<view class="head">最近搜索</view>
+			<view class="keywords">
+				<view class="tag" v-for="item in tags" :key="item">
+					<u-tag :text="item" type="info" @click="handleClick(item)" />
+				</view>
+			</view>
+		</view>
 
 		<view class="hotSearch">
 			<view class="head">热门搜索</view>
 			<view class="keywords">
-				<u-tag class="hotword" v-for="item in tags" :key="item" :text="item" type="info" @click="handleClick(item)"/>
+				<view class="tag" v-for="item in tags" :key="item">
+					<u-tag :text="item" type="info" @click="handleClick(item)" />
+				</view>
 			</view>
 		</view>
 	</view>
@@ -36,10 +47,10 @@
 				console.log(this.keyword);
 				//展示对应商品列表
 			},
-			handleClick(keyword){
+			handleClick(keyword) {
 				console.log(keyword);
 				uni.navigateTo({
-					url:"/pages/goodsList/goodsList?word=" + keyword
+					url: "/pages/goodsList/goodsList?word=" + keyword
 				})
 			}
 		}
@@ -63,12 +74,12 @@
 			}
 
 			.keywords {
-				.hotword {
-					::v-deep .u-tag {
-						margin: 10rpx !important;
-						margin-left: 0 !important;
-						color: $f-color !important;
-					}
+				display: flex;
+				flex-wrap: wrap;
+				.tag {
+					margin: 10rpx !important;
+					margin-left: 0 !important;
+					color: $f-color !important;
 				}
 			}
 		}

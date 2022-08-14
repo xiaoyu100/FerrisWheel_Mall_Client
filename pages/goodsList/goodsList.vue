@@ -8,6 +8,9 @@
 				</view>
 			</view>
 		</view>
+
+		<u-tabs :list="list" :is-scroll="false" :current="current" :show-bar="false" @change="change"></u-tabs>
+
 		<scroll-view scroll-y="true" class="scroll_area">
 			<view class="goodsList">
 				<view class="cu-card article no-card">
@@ -172,6 +175,8 @@
 						</view>
 					</view>
 				</view>
+
+				<u-loadmore status="loadmore" margin-top="20" />
 			</view>
 		</scroll-view>
 	</view>
@@ -184,7 +189,13 @@
 		},
 		data() {
 			return {
-				word: ""
+				word: "",
+				list: [{
+					name: '默认'
+				}, {
+					name: '价格'
+				}],
+				current: 0,
 			};
 		},
 		methods: {
@@ -195,11 +206,14 @@
 					animationDuration: 100
 				})
 			},
-			goDetail(){
+			goDetail() {
 				uni.navigateTo({
-					url:'/pages/detail/detail'
+					url: '/pages/detail/detail'
 				})
-			}
+			},
+			change(index) {
+				this.current = index;
+			},
 		}
 	}
 </script>
@@ -213,10 +227,13 @@
 		}
 	}
 
+	.scroll_area {
+		height: calc(100vh - 180rpx);
+	}
+
 	.goodsList {
-		.scroll_area {
-			height: calc(100vh - 100rpx);
-		}
+		background-color: #fff;
+		padding-bottom: 20rpx;
 
 		.goodsItem {
 			.content {

@@ -11,7 +11,7 @@
 			</view>
 			<view class="h_right">
 				<view class="member_code iconfont icon-erweima "></view>
-				<view class="setting iconfont icon-shezhi"></view>
+				<view class="setting iconfont icon-shezhi" @click="goSetting"></view>
 				<view class="message iconfont icon-xinxi" @click="goMessage"></view>
 			</view>
 		</view>
@@ -21,7 +21,7 @@
 				<view class="title">
 					<view class="myOrder">
 						<view class="left_text">我的订单</view>
-						<view class="queryAll">查看全部<u-icon class="icon" name="arrow-right" color="#111" size="20">
+						<view class="queryAll" @click="goMyOrder">查看全部<u-icon class="icon" name="arrow-right" color="#111" size="20">
 							</u-icon>
 						</view>
 					</view>
@@ -104,6 +104,16 @@
 			goMessage() {
 				this.$refs.uToast.show({
 					title: '敬请期待...',
+				})
+			},
+			goMyOrder(){
+				uni.navigateTo({
+					url:"/pages/order/order"
+				})
+			},
+			goSetting(){
+				uni.navigateTo({
+					url:"/pages/setting/setting"
 				})
 			}
 		}
